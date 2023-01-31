@@ -1,7 +1,8 @@
 pipeline{
     agent any
   
-    stage('Docker Build'){
+  stages {  
+  stage('Docker Build'){
       
             steps{
                 sh "docker build -t angular-test-docker:latest ."
@@ -16,4 +17,5 @@ pipeline{
             }
       
     }
+}
 }
