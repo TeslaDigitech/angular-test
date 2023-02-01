@@ -23,5 +23,12 @@ pipeline{
             }
       
     }
+    stage('Prune unused docker images') {
+            steps {
+                sh "docker image prune -a" 
+              
+            }
+        } 
+  
 }
 }
