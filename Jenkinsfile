@@ -11,7 +11,7 @@ pipeline{
     }
     stage('Stop Running Container ') {
             steps {
-                sh "docker stop angular-test-docker" 
+                sh "docker stop docker-angular-app || true" 
               
             }
         } 
