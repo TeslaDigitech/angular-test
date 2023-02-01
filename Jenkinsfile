@@ -9,6 +9,12 @@ pipeline{
             }
       
     }
+    stage('Stop Running Container ') {
+            steps {
+                sh "docker stop angular-test-docker || true" 
+              
+            }
+        } 
   
     stage('Launch Application') {
       
