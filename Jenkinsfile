@@ -5,7 +5,7 @@ pipeline{
   stage('Docker Build'){
       
             steps{
-                sh "sudo docker build -t angular-test-docker:latest ."
+                sh "docker build -u -t angular-test-docker:latest ."
             }
       
     }
@@ -13,7 +13,7 @@ pipeline{
     stage('Launch Application') {
       
             steps {
-                sh "sudo docker run --rm -itd -p 4200:80 --name docker-angular-app angular-test-docker:latest"
+                sh "sudo docker run --rm -itd -u -p 4200:80 --name docker-angular-app angular-test-docker:latest"
             }
       
     }
